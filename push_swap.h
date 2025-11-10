@@ -1,0 +1,52 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vfidelis <vfidelis@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/03 14:08:54 by vfidelis          #+#    #+#             */
+/*   Updated: 2025/01/02 14:09:46 by vfidelis         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+
+# include <stdlib.h>
+# include <unistd.h>
+
+typedef struct s_list
+{
+	struct s_list	*prev;
+	struct s_list	*next;
+	long			num;
+	size_t			index;
+	short int		have_index;
+}	t_list;
+
+char	**ft_split(char *str);
+t_list	*ft_lstnew(long num);
+t_list	*ft_last_lst(t_list *lst);
+void	what_algorithm(t_list **lst_a, t_list **lst_b);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	free_lst(t_list **a);
+void	ft_free(char **hqts);
+void	ft_initialize(t_list **lst, char **arg, int argc);
+void	ft_swap_a_b(t_list **lst, char chr);
+void	ft_push_a_b(t_list **lst1, t_list **lst2, char chr);
+void	ft_rotate_a_b(t_list **lst, char chr);
+void	ft_re_rotate_a_b(t_list **lst, char chr);
+void	ft_index(t_list **lst_a);
+size_t	ft_is_space(size_t i, char *str);
+size_t	ft_biggest(t_list **lst);
+int		check_sort(t_list *lst);
+int		ft_error(int num);
+int		ft_atoi_error(char *str, size_t i);
+int		ft_valid(t_list *lst, t_list *last_lst, long number);
+long	ft_lstsize(t_list *lst);
+long	ft_atoi(char *str);
+long	is_bigger(t_list *lst, int options);
+
+#endif
